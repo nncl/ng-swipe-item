@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-swipe-item';
+  items: any[] = Array.from(Array(12).keys(), n => {
+    return {id: n, show: false};
+  });
+
+  onSwipe = (evt, item) => item.show = !item.show;
 }
